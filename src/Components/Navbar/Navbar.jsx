@@ -14,7 +14,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 import { useNavigate } from "react-router-dom";
 
-const pages = [{name: 'About Me', path: "/about"}, {name:'Portfolio', path: "/portfolio"}];
+const pages = [{name: 'Home', path: "/"},{name: 'About Me', path: "/about"}, {name:'Portfolio', path: "/portfolio"}];
 
 export const Navbar = () => {
     const navigate = useNavigate();
@@ -79,6 +79,7 @@ export const Navbar = () => {
                 vertical: 'top',
                 horizontal: 'left',
               }}
+              onClose={() => setAnchorElNav(null)}
               open={Boolean(anchorElNav)}
               sx={{
                 display: { xs: 'block',sm:'none', md: 'none' },

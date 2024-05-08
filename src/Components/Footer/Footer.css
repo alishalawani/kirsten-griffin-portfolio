@@ -1,13 +1,11 @@
 footer {
     background-image: url('../../assets/main-Footer.svg');
-        height: 220px;
+        height: 150px;
         display: flex;
         flex-direction: column;
         background-size: cover;
         width: 100%;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 20px;
+        padding: 0px 20px;
         color: #FFFFFF;
         font-size: 24px;
         font-weight: 600;
@@ -28,6 +26,7 @@ footer .social-buttons {
     position: relative;
     width: 160px;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 footer .social-btn {
@@ -46,4 +45,5 @@ footer .social-media-circle {
 footer .social-icon {
     position: absolute;
     color: #F2F2F2;
+   
 }

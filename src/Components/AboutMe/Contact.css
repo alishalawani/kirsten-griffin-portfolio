@@ -7,6 +7,8 @@
     width: 90%;
     text-align: left;
     margin-top: 40px;
+    padding-bottom: 20px;
+
 }
 .contact-section .get-in-touch {
     position: relative !important;
@@ -97,7 +99,9 @@ color: #FFFFFF;
     }
     .contact-section{
         flex-direction: column;
+        margin-bottom: 250px;
     }
+    
     .second{
         width: 100%;
        margin-top: 20px;

@@ -11,10 +11,10 @@ export default function Contact() {
 		// these IDs from the previous steps
 		sendForm(process.env.REACT_APP_EMAIL_JS_SERVICE_ID, process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,document.getElementById('contact-form')).then(
 			() => {
-				console.log('SUCCESS!');
+				document.getElementById('contact-form').reset();
 			},
-			(error) => {
-				console.log('FAILED...', error);
+			() => {
+				alert('The was an issue sending your message please try again or reach out to Kirsten directly through one of the provided contact options, thanks!')
 			}
 		);
 	};

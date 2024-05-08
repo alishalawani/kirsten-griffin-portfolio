@@ -19,24 +19,26 @@ export const ReelSection = () => {
 	const videoRef = useRef(null);
 	const isDraggingRef = useRef(false);
 
- function formatTime(seconds) {
-    // Calculate hours, minutes, and remaining seconds
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = Math.floor(seconds % 60);
+	function formatTime(seconds) {
+		// Calculate hours, minutes, and remaining seconds
+		const hours = Math.floor(seconds / 3600);
+		const minutes = Math.floor((seconds % 3600) / 60);
+		const remainingSeconds = Math.floor(seconds % 60);
 
-    // Format the time string
-    let formattedTime = '';
-    if (hours > 0) {
-        formattedTime += `${hours.toString().padStart(2, '0')}:`;
-    }
-    formattedTime += `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+		// Format the time string
+		let formattedTime = '';
+		if (hours > 0) {
+			formattedTime += `${hours.toString().padStart(2, '0')}:`;
+		}
+		formattedTime += `${minutes.toString().padStart(2, '0')}:${remainingSeconds
+			.toString()
+			.padStart(2, '0')}`;
 
-    return formattedTime;
-}
-  const toggleFullscreen = () => {
-      videoRef.current.requestFullscreen();    
-  };
+		return formattedTime;
+	}
+	const toggleFullscreen = () => {
+		videoRef.current.requestFullscreen();
+	};
 
 	// Toggle play/pause functionality
 	const togglePlayPause = () => {
@@ -137,18 +139,19 @@ export const ReelSection = () => {
 						onChange={handleChange}
 						onMouseDown={handleMouseDown}
 						onChangeCommitted={handleMouseUp}
-						sx={{ color: '#BE292E',}}
+						sx={{ color: '#BE292E' }}
 					/>
 				</Stack>
-        <div className="duration-container">
-          <p className="duration-listened">{ formatTime(videoRef.current?.currentTime)}</p>
-           <button onClick={toggleFullscreen} className='full-screen-btn'>
-        <FullscreenIcon className='full-screen-icon'/> 	
-      </button>
-          <p className="total-duration">{formatTime(duration)}</p>
-        </div>
+				<div className='duration-container'>
+					<p className='duration-listened'>
+						{formatTime(videoRef.current?.currentTime)}
+					</p>
+					<button onClick={toggleFullscreen} className='full-screen-btn'>
+						<FullscreenIcon className='full-screen-icon' />
+					</button>
+					<p className='total-duration'>{formatTime(duration)}</p>
+				</div>
 				<div className='social-buttons'>
-			
 					<button className='social-btn'>
 						<img
 							src={SocialCircle}
@@ -157,7 +160,7 @@ export const ReelSection = () => {
 						/>
 						<FacebookIcon className='social-icon' />
 					</button>
-          <button className='social-btn'>
+					<button className='social-btn'>
 						<img
 							src={SocialCircle}
 							alt='linkedin account'
@@ -165,7 +168,7 @@ export const ReelSection = () => {
 						/>
 						<LinkedInIcon className='social-icon' />
 					</button>
-          <button className='social-btn'>
+					<button className='social-btn'>
 						<img
 							src={SocialCircle}
 							alt='Twitter Account'
