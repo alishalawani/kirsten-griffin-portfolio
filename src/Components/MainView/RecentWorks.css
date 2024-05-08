@@ -1,0 +1,120 @@
+.recent-works-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 80vh;
+}
+.header-container{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.recent-works-section h2 {
+    position: relative;
+    color: #FFFFFF !important;
+    align-self: flex-start;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    margin-left: 50px;
+}
+.card-carousel{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    overflow-x: scroll;
+    align-items: center;
+    height: 400px;
+    align-self: center;
+}
+.card-carousel::-webkit-scrollbar {
+    display: none;
+}
+.video-container{
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.video{
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+}
+
+.play-btn {
+    display: flex;
+    position: absolute;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: #be292e;
+    font-weight: 600;
+    align-items: center;
+    margin-top: 15px;
+    align-self: center;
+}
+
+.play-btn-outer-circle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+}
+
+.play-btn-inner-circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.play-btn-span {
+    font-weight: 600;
+    position: absolute;
+    z-index: 100;
+}
+
+.full-screen-btn {
+    border: none;
+    background: none;
+    align-self: center;
+    justify-self: center;
+    margin-top: -25px;
+}
+
+.full-screen-icon {
+    color: #ddd;
+}
+
+
+.scroll-btns{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 30px;
+}
+
+.scroll-btn{
+    border-width: 1px;
+    border-color: #C02A2F;
+    background:none;
+    margin-left: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-style:solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scroll-btn:hover {
+    background-color: #C02A2F;
+}
+
+.scroll-icon {
+    color: #FFFFFF;
+    font-size: 28px;
+}

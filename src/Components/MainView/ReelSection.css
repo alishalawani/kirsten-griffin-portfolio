@@ -1,31 +1,31 @@
-section {
+.reel-section {
 	height: 80vh;
 	max-height: 700px;
-	width: 100vw;
+	width: 100%;
 	background-color: #02030b;
 	background-image: url('../../assets/main-Here-Section-1.svg');
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	background-size: cover;
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	background-clip: padding-box;
 	justify-content: center;
 }
-h1 {
-    top: 20px;
-    position: relative;
-    color: #fff !important;
-    align-self: center;
-    font-size: 1.3rem !important;
-    font-weight: 700 !important;
+.reel-section h1 {
+	top: 20px;
+	position: relative;
+	color: #FFFFFF !important;
+	align-self: center;
+	font-size: 1.3rem !important;
+	font-weight: 700 !important;
 }
 
 .reel {
 	width: 100%;
 	max-width: 100%;
 	align-self: center;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 .reel-container {
 	width: 80%;
@@ -44,96 +44,116 @@ h1 {
 	align-self: center;
 	margin-top: -40px;
 	height: 2px;
-	background: #fff;
+	background: #FFFFFF;
 	flex-direction: row;
 }
 
 .play-btn {
-    display: flex;
-	position: absolute;
-    background: none;
-	backdrop-filter: blur(7px);
+	display: flex;
+	position:absolute;
+	background: none;
 	border: none;
-	flex-shrink: 0;
+	margin-top: 90px;
 	border-radius: 50%;
 	color: #be292e;
-    align-items: center;
-    justify-content: center;
+    font-weight: 600;
+	align-items: center;
+	justify-content: center;
 }
-.play-btn-outer-circle{
-position: absolute;
-width: 70px;
-    height: 70px;
+.play-btn-outer-circle {
+	position: absolute;
+	width: 70px;
+	height: 70px;
 }
 .play-btn-inner-circle {
-    position: absolute;
-    width: 50px;
-        height: 50px;
+	position: absolute;
+	width: 50px;
+	height: 50px;
 }
 .play-btn-span {
-    font-weight: 600;
-        position: absolute;
+	font-weight: 600;
+	position: absolute;
+	z-index: 100;
+}
+.duration-container{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+.full-screen-btn{
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: -10px;
         z-index: 100;
 }
-.social-buttons{
-    margin-right: -60px;
-    background: none;
-    display: flex;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-end;
-    padding-bottom: 20px;
-    justify-self: center;
-    width: 50px;
-    position: absolute;
+.full-screen-icon{
+    color: #ddd;
 }
-.social-btn{
-    width: 40px;
-    background: none;
-    display: flex;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-end;
-    position: absolute;
+.reel-section .social-buttons {
+	margin-right: -45px;
+	background: none;
+	display: flex;
+    flex-direction: column;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-end;
+	padding-bottom: 20px;
+	justify-self: center;
+	width: 50px;
+	position: absolute;
 }
-.social-media-circle{
-    align-self: flex-start;
+.reel-section .social-btn {
+	width: 40px;
+	background: none;
+	display: flex;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-end;
 }
-.social-icon{
-    position: absolute;
+.reel-section .social-media-circle {
+	align-self: flex-start;
+}
+.reel-section .social-icon {
+	position: absolute;
+	color: #F2F2F2;
 }
 /* Extra small devices (phones, 576px and down) */
 @media (max-width: 576px) {
 	.reel {
 		width: 90%;
-            margin-top: 40px;
+		margin-top: 40px;
 	}
-    h1{
-        top: 40px
-    }
+	.reel-section h1 {
+		top: 40px;
+	}
 	section {
 		height: 50vh;
 		max-height: 700px;
 		width: 100vw;
 	}
+    .reel-section .social-buttons{
+        margin-right: -30px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 576px and up) */
 @media (min-width: 576px) {
-    
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 768px) {
-        .reel {
-                width: 90%;
-                margin-top: 70px;
-            }
-            h1{
-                top: 70px
-            }
+	.reel {
+		width: 90%;
+		margin-top: 70px;
+	}
+	.reel-section h1 {
+		top: 70px;
+	}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

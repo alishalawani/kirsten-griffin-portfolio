@@ -1,0 +1,49 @@
+footer {
+    background-image: url('../../assets/main-Footer.svg');
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 20px;
+        color: #FFFFFF;
+        font-size: 24px;
+        font-weight: 600;
+}
+.follow-me{
+    position: relative;
+}
+
+footer .social-buttons {
+    background: none;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    width: 160px;
+    justify-content: space-between;
+}
+
+footer .social-btn {
+    width: 40px;
+    background: none;
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .social-media-circle {
+    align-self: flex-start;
+}
+
+footer .social-icon {
+    position: absolute;
+    color: #F2F2F2;
+}

@@ -1,0 +1,105 @@
+.contact-section{
+    background-image: url('../../assets/Contact-Us-Page-bg.svg');
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-size: cover;
+    width: 90%;
+    text-align: left;
+    margin-top: 40px;
+}
+.contact-section .get-in-touch {
+    position: relative !important;
+    align-self: flex-start !important;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.first {
+ display: flex;
+ flex-direction: column;
+ width: 40%;
+ color: #FFFFFF;
+}
+.first a{
+    color: #FFFFFF;
+}
+
+.contact-section .contact-icon, .desc, .contact-row-text {
+color: #FFFFFF;
+    position: relative;
+}
+.contact-rows{
+    display: flex;
+    flex-direction: column;
+}
+.contact-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+}
+.contact-icon{
+    width: 50px !important;
+    height: 50px !important;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.07);
+    margin-right: 10px;
+    border-radius: 3px;
+}
+.contact-row-text{
+    margin-top: 7px;
+}
+.second {
+    background-image: url('../../assets/Contact-form-bg.svg');
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-size: cover;
+        width: 58%;
+        height: 450px;
+        text-align: left;
+        padding: 25px;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px;
+}
+.names{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.names input {
+    width: 48%;
+
+}
+.input {
+    border-radius: 5px;
+    border: 1px solid #42444B;
+    background: #050718;
+    color: #42444B;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.input.message {
+    height: 150px;
+    
+}
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+    .first {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact-section{
+        flex-direction: column;
+    }
+    .second{
+        width: 100%;
+       margin-top: 20px;
+    }
+}

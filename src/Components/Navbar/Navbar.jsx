@@ -12,10 +12,13 @@ import MenuItem from '@mui/material/MenuItem';
 import CameraIcon from '@mui/icons-material/Camera';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
+import { useNavigate } from "react-router-dom";
 
-const pages = ['About Me', 'Portfolio'];
+const pages = [{name: 'About Me', path: "/about"}, {name:'Portfolio', path: "/portfolio"}];
 
 export const Navbar = () => {
+    const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
 
@@ -23,8 +26,9 @@ export const Navbar = () => {
     setAnchorElNav(event.currentTarget);
   };
   
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (path) => {
     setAnchorElNav(null);
+    navigate(path, { replace: true });
   };
 
  
@@ -39,7 +43,7 @@ export const Navbar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none',sm:'flex', md: 'flex' },
@@ -76,14 +80,13 @@ export const Navbar = () => {
                 horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block',sm:'none', md: 'none' },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{textTransform: 'none',}}>{page}</Typography>
+                <MenuItem key={page.name} onClick={()=>{handleCloseNavMenu(page.path)}} href={page.path}>
+                  <Typography  textAlign="center" sx={{textTransform: 'none',}}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -93,7 +96,7 @@ export const Navbar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex',sm:'none', md: 'none' },
@@ -110,18 +113,18 @@ export const Navbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none',sm:'flex', md: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.name}
+                onClick={()=>handleCloseNavMenu(page.path)}
                 sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
           <Button variant="contained" sx={{ backgroundColor: '#BE292E', borderRadius: '100px', textTransform: 'none', maxHeight: '40px', minWidth: '135px'
-     }} endIcon={<ArrowOutwardIcon />}>
+     }} endIcon={<ArrowOutwardIcon />} href="/about#contact-me">
   Contact Me
 </Button>
           </Box>

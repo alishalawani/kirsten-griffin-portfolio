@@ -1,11 +1,14 @@
 import React from 'react'
 import { ReelSection } from './ReelSection';
 import './MainView.css';
+import RecentWorks from './RecentWorks';
+import Services from './Services';
 export const MainView = () => {
   return (
     <div className='main-page'>
-      {/* <h1>I'm Kirsten, expert in Cinematography</h1> */}
         <ReelSection/>
+        <RecentWorks/>
+        <Services/>
     </div>
   )
 }

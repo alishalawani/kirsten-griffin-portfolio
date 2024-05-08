@@ -1,0 +1,22 @@
+.portfolio-page{
+width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    padding-bottom: 150px;
+}
+
+.portfolio-page h1{
+    position: relative !important;
+    align-self: center;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.pic {
+    max-width: 50%;
+    padding: 10px;
+}
