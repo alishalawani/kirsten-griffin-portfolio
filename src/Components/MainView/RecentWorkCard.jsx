@@ -38,6 +38,9 @@ export default function RecentWorkCard({source, index}) {
 
 	// Update current time and duration as video metadata loads
 	const handleLoadedMetadata = () => {
+		if(videoRef.current.paused){
+			videoRef.current.controls = false;
+		}
 		setDuration(videoRef.current.duration);
 	};
 

@@ -40,11 +40,6 @@ export const ReelSection = () => {
 		return formattedTime;
 	}
 	const toggleFullscreen = () => {
-		if(isFullScreen){
-			videoRef.current.controlsList = "nodownload nofullscreen";
-		} else {
-			videoRef.current.controlsList = "nodownload";
-		}
 		videoRef.current.requestFullscreen();
 		setIsFullScreen(!isFullScreen)
 	};
@@ -62,6 +57,9 @@ export const ReelSection = () => {
 
 	// Update current time and duration as video metadata loads
 	const handleLoadedMetadata = () => {
+		if(videoRef.current.paused){
+			videoRef.current.controls = false;
+		}
 		setDuration(videoRef.current.duration);
 	};
 
@@ -115,7 +113,6 @@ export const ReelSection = () => {
 					className='reel'
 					ref={videoRef}
 					controls={false}
-					controlsList='nodownload nofullscreen'
 					onTimeUpdate={handleTimeUpdate}
 					onEnded={() => setIsPlaying(false)}>
 					<source src='videos/reel.mp4' type='video/mp4' />
