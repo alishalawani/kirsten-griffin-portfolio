@@ -53,6 +53,7 @@ export default function RecentWorkCard({source, index}) {
 						<div className='video-container' >
 							<video
 								className='video'
+								controls={false}
 								ref={videoRef}
 								onEnded={() => setIsPlaying(false)}>
 								<source src={source} type='video/mp4' />

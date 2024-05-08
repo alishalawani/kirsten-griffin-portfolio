@@ -103,9 +103,10 @@ export const ReelSection = () => {
 				<video
 					className='reel'
 					ref={videoRef}
+					controls={false}
 					onTimeUpdate={handleTimeUpdate}
 					onEnded={() => setIsPlaying(false)}>
-					<source src='videos/IMG_2968.mp4' type='video/mp4' />
+					<source src='videos/reel.mp4' type='video/mp4' />
 					Your browser does not support the video tag.
 				</video>
 				<button onClick={togglePlayPause} className='play-btn'>
