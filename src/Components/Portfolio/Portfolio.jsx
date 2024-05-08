@@ -19,7 +19,7 @@ export default function Portfolio() {
     <main className='portfolio-page'>
       <h1>My Portfolio</h1>
       <div className="pictures">
-        {pictures.map((pic) => <img src={pic} alt="life on set" className='pic'/>)}
+        {pictures.map((pic) => <img src={"%PUBLIC_URL%/"+pic} alt="life on set" className='pic'/>)}
       </div>
     </main>
   )
