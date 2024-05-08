@@ -40,7 +40,7 @@ export default function RecentWorks() {
 
 			<div className='card-carousel' ref={cardCarouselRef}>
 				{[1, 2, 3, 4].map((card, i) => (
-					<RecentWorkCard source={'%PUBLIC_URL%/videos/IMG_2968.mp4'} index={i} key={i} />
+					<RecentWorkCard source={'videos/IMG_2968.mp4'} index={i} key={i} />
 				))}
 			</div>
 		</section>
