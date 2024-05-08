@@ -10,13 +10,19 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 export default function RecentWorkCard({source, index}) {
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [isFullScreen, setIsFullScreen] = useState(false);
 
 	const [duration, setDuration] = useState(0);
 	const videoRef = useRef(null);
-
 	
 	const toggleFullscreen = () => {
+		if(isFullScreen){
+			videoRef.current.controlsList = "nodownload nofullscreen";
+		} else {
+			videoRef.current.controlsList = "nodownload";
+		}
 		videoRef.current.requestFullscreen();
+		setIsFullScreen(!isFullScreen)
 	};
 
 	// Toggle play/pause functionality

@@ -12,12 +12,15 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 export const ReelSection = () => {
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [isFullScreen, setIsFullScreen] = useState(false);
+
 	const sliderRef = useRef(null); // Add sliderRef
 
 	const [duration, setDuration] = useState(0);
 	const [sliderValue, setSliderValue] = useState(0);
 	const videoRef = useRef(null);
 	const isDraggingRef = useRef(false);
+	
 
 	function formatTime(seconds) {
 		// Calculate hours, minutes, and remaining seconds
@@ -37,7 +40,13 @@ export const ReelSection = () => {
 		return formattedTime;
 	}
 	const toggleFullscreen = () => {
+		if(isFullScreen){
+			videoRef.current.controlsList = "nodownload nofullscreen";
+		} else {
+			videoRef.current.controlsList = "nodownload";
+		}
 		videoRef.current.requestFullscreen();
+		setIsFullScreen(!isFullScreen)
 	};
 
 	// Toggle play/pause functionality
@@ -106,6 +115,7 @@ export const ReelSection = () => {
 					className='reel'
 					ref={videoRef}
 					controls={false}
+					controlsList='nodownload nofullscreen'
 					onTimeUpdate={handleTimeUpdate}
 					onEnded={() => setIsPlaying(false)}>
 					<source src='videos/reel.mp4' type='video/mp4' />
