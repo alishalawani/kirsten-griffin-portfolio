@@ -90,9 +90,20 @@ export const ReelSection = () => {
 	useEffect(() => {
 		document.addEventListener('fullscreenchange', () => {
 			if (!document.fullscreenElement) {
+				setIsPlaying(false);
 				videoRef.current.controls = false;
 				videoRef.current.style.pointerControls = 'none'
 			}else {
+				videoRef.current.style.pointerControls = ''
+			}
+		});
+		document.addEventListener('webkitfullscreenchange', () => {
+			if (!document.fullscreenElement) {
+				document.exitPointerLock();
+				videoRef.current.controls = false;
+			videoRef.current.style.pointerControls = 'none'
+			}else {
+				document.documentElement.requestPointerLock();
 				videoRef.current.style.pointerControls = ''
 			}
 		});
@@ -122,7 +133,7 @@ export const ReelSection = () => {
 					<source src='videos/reel.mp4' type='video/mp4' />
 					Your browser does not support the video tag.
 				</video>
-				<button onClick={togglePlayPause} className='play-btn'>
+				<button onClick={togglePlayPause} className='play-btn' style={{opacity: isPlaying ? 0 : 1}}>
 					<img
 						src={PlayPauseOuterCircle}
 						alt='play-btn-outer-circle'

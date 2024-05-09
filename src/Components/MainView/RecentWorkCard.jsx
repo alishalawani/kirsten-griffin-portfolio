@@ -40,12 +40,23 @@ export default function RecentWorkCard({source, index}) {
 	useEffect(() => {
 		document.addEventListener('fullscreenchange', () => {
 			if (!document.fullscreenElement) {
+				document.exitPointerLock();
+				videoRef.current.controls = false;
+			videoRef.current.style.pointerControls = 'none'
+			}else {
+				document.documentElement.requestPointerLock();
+				videoRef.current.style.pointerControls = ''
+			}
+		});
+		document.addEventListener('webkitfullscreenchange', () => {
+			if (!document.fullscreenElement) {
 				videoRef.current.controls = false;
 			videoRef.current.style.pointerControls = 'none'
 			}else {
 				videoRef.current.style.pointerControls = ''
 			}
 		});
+		
 		// Update current time and duration as video metadata loads
 		videoRef.current?.addEventListener('loadedmetadata', handleLoadedMetadata);
 
@@ -57,6 +68,7 @@ export default function RecentWorkCard({source, index}) {
 			);
 		};
 	}, [duration]);
+	
 	return (
 				<Card sx={{ minWidth: 300,maxWidth: 300, marginRight: 5, background: "#02030B", color: "#FFFFFF", textAlign: "left", minHeight: 300, borderRadius: 2}} > 
 					<CardActionArea sx={{ width: "100%", }}>
@@ -69,7 +81,7 @@ export default function RecentWorkCard({source, index}) {
 								<source src={source} type='video/mp4' />
 								Your browser does not support the video tag.
 							</video>
-							<button onClick={togglePlayPause} className='play-btn'>
+							<button onClick={togglePlayPause} className='play-btn' style={{opacity: isPlaying ? 0 : 1}}>
 								<img
 									src={PlayPauseOuterCircle}
 									alt='play-btn-outer-circle'
