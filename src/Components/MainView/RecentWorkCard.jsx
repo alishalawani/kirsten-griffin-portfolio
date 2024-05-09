@@ -51,6 +51,7 @@ export default function RecentWorkCard({source, index}) {
 		});
 		document.addEventListener('webkitfullscreenchange', () => {
 			if (!document.fullscreenElement) {
+				setIsPlaying(false);
 				document.exitPointerLock();
 				videoRef.current.controls = false;
 			videoRef.current.style.pointerControls = 'none'
