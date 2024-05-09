@@ -11,6 +11,8 @@ import XIcon from '@mui/icons-material/X';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 
 export const ReelSection = () => {
+	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isFullScreen, setIsFullScreen] = useState(false);
 
@@ -170,7 +172,7 @@ export const ReelSection = () => {
 					<p className='duration-listened'>
 						{formatTime(videoRef.current?.currentTime)}
 					</p>
-					<button onClick={toggleFullscreen} className='full-screen-btn'>
+					<button onClick={toggleFullscreen} className='full-screen-btn' style={{opacity: isMobile ? 0 : 1}}>
 						<FullscreenIcon className='full-screen-icon' />
 					</button>
 					<p className='total-duration'>{formatTime(duration)}</p>

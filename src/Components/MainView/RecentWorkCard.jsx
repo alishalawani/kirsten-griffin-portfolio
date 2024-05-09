@@ -9,6 +9,7 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 export default function RecentWorkCard({source, index}) {
+	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 	const [isPlaying, setIsPlaying] = useState(false);
 
 	const [duration, setDuration] = useState(0);
@@ -98,7 +99,7 @@ export default function RecentWorkCard({source, index}) {
 								<span> {isPlaying ?<PauseIcon fontSize='large'/>: <PlayArrowIcon fontSize='large'/>}</span>
 							</button>
 
-							<button onClick={toggleFullscreen} className='full-screen-btn'>
+							<button onClick={toggleFullscreen} className='full-screen-btn' style={{opacity: isMobile ? 0 : 1}}>
 								<FullscreenIcon className='full-screen-icon'/>
 							</button>
 						</div>
