@@ -91,6 +91,9 @@ export const ReelSection = () => {
 		document.addEventListener('fullscreenchange', () => {
 			if (!document.fullscreenElement) {
 				videoRef.current.controls = false;
+				videoRef.current.style.pointerControls = 'none'
+			}else {
+				videoRef.current.style.pointerControls = ''
 			}
 		});
 		// Update current time and duration as video metadata loads
