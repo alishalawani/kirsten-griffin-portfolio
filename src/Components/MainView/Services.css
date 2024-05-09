@@ -1,6 +1,6 @@
 .services-section {
 	background-image: url('../../assets/main-4th-Section.svg');
-	height: 80vh;
+	/* height: 80vh; */
 	display: flex;
 	flex-direction: column;
 	background-size: cover;

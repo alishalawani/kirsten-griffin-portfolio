@@ -38,21 +38,24 @@ export default function RecentWorkCard({source, index}) {
 	};
 
 	useEffect(() => {
-		document.addEventListener('fullscreenchange', () => {
+	document.addEventListener('fullscreenchange', () => {
 			if (!document.fullscreenElement) {
-				document.exitPointerLock();
+				setIsPlaying(false);
 				videoRef.current.controls = false;
-			videoRef.current.style.pointerControls = 'none'
+				videoRef.current.style.pointerControls = 'none'
 			}else {
-				document.documentElement.requestPointerLock();
+				setIsPlaying(true);
 				videoRef.current.style.pointerControls = ''
 			}
 		});
 		document.addEventListener('webkitfullscreenchange', () => {
 			if (!document.fullscreenElement) {
+				document.exitPointerLock();
 				videoRef.current.controls = false;
 			videoRef.current.style.pointerControls = 'none'
 			}else {
+				setIsPlaying(true);
+				document.documentElement.requestPointerLock();
 				videoRef.current.style.pointerControls = ''
 			}
 		});
