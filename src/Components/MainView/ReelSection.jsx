@@ -92,22 +92,18 @@ export const ReelSection = () => {
 	useEffect(() => {
 		document.addEventListener('fullscreenchange', () => {
 			if (!document.fullscreenElement) {
-				setIsPlaying(false);
 				videoRef.current.controls = false;
 				videoRef.current.style.pointerControls = 'none'
 			}else {
-				setIsPlaying(true);
 				videoRef.current.style.pointerControls = ''
 			}
 		});
 		document.addEventListener('webkitfullscreenchange', () => {
 			if (!document.fullscreenElement) {
-				setIsPlaying(false);
 				document.exitPointerLock();
 				videoRef.current.controls = false;
 			videoRef.current.style.pointerControls = 'none'
 			}else {
-				setIsPlaying(true);
 				document.documentElement.requestPointerLock();
 				videoRef.current.style.pointerControls = ''
 			}
