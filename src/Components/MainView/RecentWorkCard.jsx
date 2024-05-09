@@ -45,6 +45,11 @@ export default function RecentWorkCard({source, index}) {
 	};
 
 	useEffect(() => {
+		document.addEventListener('fullscreenchange', () => {
+			if (!document.fullscreenElement) {
+				videoRef.current.controls = false;
+			}
+		});
 		// Update current time and duration as video metadata loads
 		videoRef.current?.addEventListener('loadedmetadata', handleLoadedMetadata);
 

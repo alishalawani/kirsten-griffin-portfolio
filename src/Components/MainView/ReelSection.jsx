@@ -20,7 +20,6 @@ export const ReelSection = () => {
 	const [sliderValue, setSliderValue] = useState(0);
 	const videoRef = useRef(null);
 	const isDraggingRef = useRef(false);
-	
 
 	function formatTime(seconds) {
 		// Calculate hours, minutes, and remaining seconds
@@ -41,7 +40,7 @@ export const ReelSection = () => {
 	}
 	const toggleFullscreen = () => {
 		videoRef.current.requestFullscreen();
-		setIsFullScreen(!isFullScreen)
+		setIsFullScreen(!isFullScreen);
 	};
 
 	// Toggle play/pause functionality
@@ -57,9 +56,6 @@ export const ReelSection = () => {
 
 	// Update current time and duration as video metadata loads
 	const handleLoadedMetadata = () => {
-		if(videoRef.current.paused){
-			videoRef.current.controls = false;
-		}
 		setDuration(videoRef.current.duration);
 	};
 
@@ -92,6 +88,11 @@ export const ReelSection = () => {
 	};
 
 	useEffect(() => {
+		document.addEventListener('fullscreenchange', () => {
+			if (!document.fullscreenElement) {
+				videoRef.current.controls = false;
+			}
+		});
 		// Update current time and duration as video metadata loads
 		videoRef.current?.addEventListener('loadedmetadata', handleLoadedMetadata);
 
