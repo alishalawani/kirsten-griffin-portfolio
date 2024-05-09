@@ -1,12 +1,11 @@
 .services-section {
 	background-image: url('../../assets/main-4th-Section.svg');
-	/* height: 80vh; */
 	display: flex;
 	flex-direction: column;
 	background-size: cover;
 	max-height: 700px;
 	width: 100vw;
-    padding: 10px 0 30px 0px;
+    padding: 20px 0 30px 0px;
     justify-content: center;
     align-items: center ;
 }
