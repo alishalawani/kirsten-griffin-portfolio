@@ -96,7 +96,7 @@ export default function RecentWorkCard({ source,title,details, index, isPlaying,
           </video>
           <button
             onClick={togglePlayPause}
-            className={`play-btn ${isPlaying ? 'pause-btn' : ''}`}
+            className={`play-btn ${isPlaying && !isMobile ? 'pause-btn' : ''}`}
           >
             <img
               src={PlayPauseOuterCircle}
@@ -109,7 +109,7 @@ export default function RecentWorkCard({ source,title,details, index, isPlaying,
               className="play-btn-inner-circle"
             />
             <span>
-              {isPlaying ? <PauseIcon fontSize="large" /> : <PlayArrowIcon fontSize="large" />}
+              {isPlaying && !isMobile ? <PauseIcon fontSize="large" /> : <PlayArrowIcon fontSize="large" />}
             </span>
           </button>
 

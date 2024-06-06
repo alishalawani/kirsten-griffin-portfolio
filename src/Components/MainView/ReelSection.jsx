@@ -155,7 +155,7 @@ export const ReelSection = () => {
 						alt='play-btn-inner-circle'
 						className='play-btn-inner-circle'
 					/>
-					<span> {isPlaying ? <PauseIcon fontSize='large'/>:  <PlayArrowIcon fontSize='large'/>}</span>
+					<span> {isPlaying && !isMobile ? <PauseIcon fontSize='large'/>:  <PlayArrowIcon fontSize='large'/>}</span>
 				</button>
 				<Stack
 					spacing={2}
