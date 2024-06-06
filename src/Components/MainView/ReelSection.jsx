@@ -141,7 +141,7 @@ export const ReelSection = () => {
 					onClick={togglePlayPause}
 					onTimeUpdate={handleTimeUpdate}
 					onEnded={() => setIsPlaying(false)}>
-					<source src='videos/reel.mp4' type='video/mp4' />
+					<source src='https://kng-portfolio-videos.s3.amazonaws.com/reel.mp4' type='video/mp4' />
 					Your browser does not support the video tag.
 				</video>
 				<button onClick={togglePlayPause} className={`play-btn ${isPlaying && !isMobile ? 'pause-btn' : ''}`}>
