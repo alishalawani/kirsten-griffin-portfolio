@@ -185,30 +185,30 @@ export const ReelSection = () => {
 					<p className='total-duration'>{formatTime(duration)}</p>
 				</div>
 				<div className='social-buttons'>
-					<button className='social-btn'>
+					<a className='social-btn' target="blank" href="https://www.facebook.com/profile.php?id=61557086201754&mibextid=LQQJ4d">
 						<img
 							src={SocialCircle}
 							alt='facebook account'
 							className='social-media-circle'
 						/>
 						<FacebookIcon className='social-icon' />
-					</button>
-					<button className='social-btn'>
+					</a>
+					<a className='social-btn' target="blank" href="https://www.linkedin.com/in/kirsten-griffin-2b29b7151?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
 						<img
 							src={SocialCircle}
 							alt='linkedin account'
 							className='social-media-circle'
 						/>
 						<LinkedInIcon className='social-icon' />
-					</button>
-					<button className='social-btn'>
+					</a>
+					<a className='social-btn' target="blank" href="https://x.com/kirbystene?s=21&t=_vMGwwcX1WhPZR9S8IMscA">
 						<img
 							src={SocialCircle}
 							alt='Twitter Account'
 							className='social-media-circle'
 						/>
 						<XIcon className='social-icon' />
-					</button>
+					</a>
 				</div>
 			</div>
 		</section>
