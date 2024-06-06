@@ -100,6 +100,13 @@ export const ReelSection = () => {
 				videoRef.current.style.pointerControls = ''
 			}
 		});
+		document.addEventListener('keydown', (event) => {
+			if(event.code === "Space" && event.target === document.body){
+				togglePlayPause();
+				event.preventDefault()
+			}
+		})
+		
 		document.addEventListener('webkitfullscreenchange', () => {
 			if (!document.fullscreenElement) {
 				document.exitPointerLock();
@@ -137,7 +144,7 @@ export const ReelSection = () => {
 					<source src='videos/reel.mp4' type='video/mp4' />
 					Your browser does not support the video tag.
 				</video>
-				<button onClick={togglePlayPause} className={`play-btn ${isPlaying ? 'pause-btn' : ''}`}>
+				<button onClick={togglePlayPause} className={`play-btn ${isPlaying && !isMobile ? 'pause-btn' : ''}`}>
 					<img
 						src={PlayPauseOuterCircle}
 						alt='play-btn-outer-circle'
