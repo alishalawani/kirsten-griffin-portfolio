@@ -42,12 +42,12 @@ export default function Contact() {
 					<div className='contact-row'>
 						<CallIcon className='contact-icon' />
 						<p className='contact-row-text'>
-							<a href='tel:+18176579294'>(817)657-9294</a>
+							<a href='tel:+18176579294'>(817)888-8888</a>
 						</p>
 					</div>
 					<div className='contact-row'>
 						<EmailIcon className='contact-icon' />
-						<p className='contact-row-text'>kgriffin@dummy-email.com </p>
+						<p className='contact-row-text'>griffkir001@gmail.com</p>
 					</div>
 					<div className='contact-row'>
 						<PlaceIcon className='contact-icon' />
