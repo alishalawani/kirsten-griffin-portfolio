@@ -8,15 +8,27 @@ import { sendForm } from '@emailjs/browser';
 export default function Contact() {
 	const onSubmit = (event) => {
 		event.preventDefault();
-		// these IDs from the previous steps
-		sendForm(process.env.REACT_APP_EMAIL_JS_SERVICE_ID, process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,document.getElementById('contact-form')).then(
+		const form = document.getElementById('contact-form');
+		const firstName = form.querySelector('[name="first_name"]').value.trim();
+		const lastName = form.querySelector('[name="last_name"]').value.trim();
+		const email = form.querySelector('[name="email"]').value.trim();
+		const phone = form.querySelector('[name="phone"]').value.trim();
+		const message = form.querySelector('[name="message"]').value.trim();
+
+		if (!firstName || !lastName || !email || !phone || !message) {
+			alert('Please fill out the contact form');
+			return;
+		}
+
+		sendForm(process.env.REACT_APP_EMAIL_JS_SERVICE_ID, process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID, form).then(
 			() => {
-				document.getElementById('contact-form').reset();
+			form.reset();
 			},
 			() => {
-				alert('The was an issue sending your message please try again or reach out to Kirsten directly through one of the provided contact options, thanks!')
+			alert('There was an issue sending your message. Please try again or reach out to Kirsten directly through one of the provided contact options. Thanks!');
 			}
-		);
+  );
+
 	};
 	return (
 		<section id='contact-me' className='contact-section'>

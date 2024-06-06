@@ -9,6 +9,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
 
 export const ReelSection = () => {
 	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -129,12 +131,13 @@ export const ReelSection = () => {
 					className='reel'
 					ref={videoRef}
 					controls={false}
+					onClick={togglePlayPause}
 					onTimeUpdate={handleTimeUpdate}
 					onEnded={() => setIsPlaying(false)}>
 					<source src='videos/reel.mp4' type='video/mp4' />
 					Your browser does not support the video tag.
 				</video>
-				<button onClick={togglePlayPause} className='play-btn' style={{opacity: isPlaying ? 0 : 1}}>
+				<button onClick={togglePlayPause} className={`play-btn ${isPlaying ? 'pause-btn' : ''}`}>
 					<img
 						src={PlayPauseOuterCircle}
 						alt='play-btn-outer-circle'
@@ -145,7 +148,7 @@ export const ReelSection = () => {
 						alt='play-btn-inner-circle'
 						className='play-btn-inner-circle'
 					/>
-					<span> {isPlaying ? 'Pause' : 'Play'}</span>
+					<span> {isPlaying ? <PauseIcon fontSize='large'/>:  <PlayArrowIcon fontSize='large'/>}</span>
 				</button>
 				<Stack
 					spacing={2}

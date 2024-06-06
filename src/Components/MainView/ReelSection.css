@@ -59,6 +59,12 @@
 	align-items: center;
 	justify-content: center;
 }
+.pause-btn{
+	opacity: 0;
+}
+.pause-btn:hover{
+	opacity: 1;
+}
 .play-btn-outer-circle {
 	position: absolute;
 	width: 70px;
